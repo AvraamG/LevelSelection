@@ -275,10 +275,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 39824666}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74e8ec7e2d0c6744081841b043d1b502, type: 3}
+  m_Script: {fileID: 11500000, guid: 4ed13c16a10f9e94e9ad689c2d840cb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levels: []
 --- !u!4 &39824668
 Transform:
   m_ObjectHideFlags: 0
@@ -350,7 +349,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -361,7 +360,7 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 21300000, guid: 3b8f5617a29a68b4996861c187b17b1a, type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
@@ -404,7 +403,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0992893ded4d09845be19e1630e697ee, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7f82e698a98ad424ab25f714f6901c96, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -471,7 +470,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 268344349}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dea888a1c5c400642a59b98e0d001a03, type: 3}
+  m_Script: {fileID: 11500000, guid: 348f142e8e6782b47a029d37bfa8d853, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   popupText: {fileID: 905417794}
@@ -493,7 +492,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0992893ded4d09845be19e1630e697ee, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 99f9b76b27743084fa10e7df0b3a5fc3, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -543,6 +542,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfb165fef3c7b3f44884ee24201faf32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelController: {fileID: 39824667}
+  levelUI: {fileID: 114825495421612720, guid: 384465560ba02de478673a2e218ab4b7, type: 3}
+  levelPopup: {fileID: 268344351}
 --- !u!114 &306144649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -585,7 +587,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -822,7 +824,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -833,7 +835,7 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 21300000, guid: 3b8f5617a29a68b4996861c187b17b1a, type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
@@ -876,7 +878,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0992893ded4d09845be19e1630e697ee, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7f82e698a98ad424ab25f714f6901c96, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1146,7 +1148,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 113037b7e4434194592d58851f109010, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0aa88dec1a479d144b2cf94af3ffef24, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1336,7 +1338,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 68e3727e86c758e43a278187077e9e42, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b719e06565ebd3f40b5cbf5b336bc37c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

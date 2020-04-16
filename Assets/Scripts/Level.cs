@@ -1,78 +1,41 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-public class Level : MonoBehaviour
-{
-    public enum LevelStatus
+public class Level {
+    public int ID { get; set; }
+    public string LevelName { get; set; }
+    public bool Completed { get; set; }
+    public int Stars { get; set; }
+    public bool Locked { get; set; }
+
+    public Level(int id, string levelName, bool completed, int stars, bool locked)
     {
-        Locked=0,
-        Available=1,
-        Completed=2
-    }
-    #region Attributes
-
-    private readonly int _id;
-    private readonly string _levelName;
-    private int _ammountOfStars;
-    private LevelStatus _status;
-
-    public int Id { get { return _id; } }
-    public string LevelName { get { return _levelName; } }
-    public int AmmountOfStars { get { return _ammountOfStars; } }
-    public LevelStatus Status { get { return _status; } }
-
-    #endregion
-
-
-    public Level(int newID, string newLevelName, int newAmmountOfStars, LevelStatus newLevelStatus)
-    {
-        this._id = newID;
-        this._levelName = newLevelName;
-        this._ammountOfStars = newAmmountOfStars;
-        this._status = newLevelStatus;
+        this.ID = id;
+        this.LevelName = levelName;
+        this.Completed = completed;
+        this.Stars = stars;
+        this.Locked = locked;
     }
 
-    public Level(int newID, string newLevelName)
+    public void Complete()
     {
-        this._id = newID;
-        this._levelName = newLevelName;
-        this._ammountOfStars = 0;
-        this._status = LevelStatus.Locked;
+        this.Completed = true;
+    }
+    
+    public void Complete(int stars)
+    {
+        this.Completed = true;
+        this.Stars = stars;
     }
 
-
-    public void CompleteLevel()
+    public void Lock()
     {
-        this._ammountOfStars = 1;
-        this._status = LevelStatus.Completed;
-    }
-    public void CompleteLevel(int ammountOfStars)
-    {
-        this._ammountOfStars = ammountOfStars;
-        this._status = LevelStatus.Completed;
+        this.Locked = true;
     }
 
-    public void UnlockLevel()
+    public void Unlock()
     {
-        this._status = LevelStatus.Available;
-    }
-
-    public void LockLevel()
-    {
-        this._status = LevelStatus.Locked;
-    }
-
-    // Start is called before the first frame update
-    private void Start()
-    {
-
-
-
-
-    }
-
-    // Update is called once per frame
-    private void Update()
-    {
-
+        this.Locked = false;
     }
 }

@@ -5,8 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class UILevelSelect : MonoBehaviour {
-
-
+    [SerializeField] private LevelController levelController;
     [SerializeField] private UILevel levelUI;
     [SerializeField] private LevelPopup levelPopup;
 
@@ -18,7 +17,7 @@ public class UILevelSelect : MonoBehaviour {
 	void Start () {
         levelSelectPanel = transform;
 
-        for (int i = 0; i < LevelManager.Instance._allLevels.Count; i++)
+        for(int i = 0; i < levelController.levels.Count; i++)
         {
             levelList.Add(levelUI);
         }
@@ -34,16 +33,16 @@ public class UILevelSelect : MonoBehaviour {
 
         for(int i = 0; i < pageList.Count; i++)
         {
-            Level level = LevelManager.Instance._allLevels[(page * pageSize) + i];
+            Level level = levelController.levels[(page * pageSize) + i];
             UILevel instance = Instantiate(pageList[i]);
-            instance.SetStars(level.AmmountOfStars);
+            instance.SetStars(level.Stars);
             instance.transform.SetParent(levelSelectPanel);
             instance.GetComponent<Button>().onClick.AddListener(() => SelectLevel(level));
 
-            if (level.Status != Level.LevelStatus.Locked)
+            if (!level.Locked)
             {
                 instance.lockImage.SetActive(false);
-                instance.levelIDText.text = level.Id.ToString();
+                instance.levelIDText.text = level.ID.ToString();
             }
             else
             {
@@ -73,16 +72,16 @@ public class UILevelSelect : MonoBehaviour {
 
     void SelectLevel(Level level)
     {
-        if (level.Status == Level.LevelStatus.Locked)
+        if (level.Locked)
         {
             levelPopup.gameObject.SetActive(true);
-            levelPopup.SetText("<b>Level " + level.Id + " is currently locked.</b>\nComplete level " + (level.Id-1) + " to unlock it!");
+            levelPopup.SetText("<b>Level " + level.ID + " is currently locked.</b>\nComplete level " + (level.ID-1) + " to unlock it!");
             Debug.Log("Level locked.");
         }
         else
         {
-            Debug.Log("Go to level: " + level.Id);
-            LevelManager.Instance.LoadSpecificLevel (level);
+            Debug.Log("Go to level: " + level.ID);
+            levelController.StartLevel(level.LevelName);
         }
     }
 }
